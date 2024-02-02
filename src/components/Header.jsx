@@ -20,6 +20,7 @@ export const Header = ({ handleSearch }) => {
               type="text"
               className="bg-gray-100 text-sm w-[114px]"
             />
+            
             <img className="size-4" src="/search-icon.svg" alt="" />
           </div>
         </div>

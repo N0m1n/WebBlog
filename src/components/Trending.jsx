@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 export const TrendingBlog = ({ trend }) => {
   return (
-    <div className=" w-full flex flex-col  border rounded-md gap-3">
-      <h2 className="bold text-4xl text-black px-5 py-4">Trending</h2>
-      <div className="grid grid-cols-4 gap-3">
+    <div className=" max-w-screen-xl m-auto flex flex-col  gap-[30px]">
+      <h2 className="font-bold text-4xl text-black px-5 py-4">Trending</h2>
+      <div className=" w-full grid grid-cols-4 gap-5 ">
         {trend.map((el) => {
           return (
             <div
@@ -14,12 +14,16 @@ export const TrendingBlog = ({ trend }) => {
                 backgroundImage: `url(${el.cover_image})`,
               }}
             >
-              <div className="flex bg-gray-300 flex-col  absolute bottom-0 items-start">
-                <p className="text-white text-base p-4 rounded-md bg-indigo-500">
-                  {el.tags.toUpperCase().split(" ")[1]}
-                </p>
+              <div className=" w-full h-full bg-black bg-opacity-30 rounded-md  ">
+                <div className="flex flex-col m-auto justify-center p-8 gap-4 absolute bottom-[10px] ">
+                  <p className="text-white text-base  w-fit px-3 py-1 items-start rounded-md bg-indigo-500">
+                    {el.tags.toUpperCase().split(" ")[1]}
+                  </p>
 
-                <h1 className="flex text-white  align-bottom">{el.title}</h1>
+                  <h1 className="flex text-white text-lg text-justify font-bold items-center">
+                    {el.title}
+                  </h1>
+                </div>
               </div>
             </div>
           );

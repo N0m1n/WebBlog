@@ -5,6 +5,8 @@ import {
   MainContent,
   TrendingBlog,
   AllBlog,
+  Footer,
+  ContactData,
 } from "../components/Index.js";
 
 import { useEffect, useState } from "react";
@@ -38,7 +40,7 @@ export default function Home() {
         `https://dev.to/api/articles?per_page=${pageStatus}`
       );
       const latest = await fetch(
-        `https://dev.to/api/articles?state=fresh&per_page=1`
+        `https://dev.to/api/articles?state=fresh&per_page=3`
       );
       const rising = await fetch(
         `https://dev.to/api/articles?state=rising&per_page=4`
@@ -72,7 +74,7 @@ export default function Home() {
     setFilteredArray(filteredArticles);
   };
   return (
-    <div>
+    <div className="bg-white flex flex-col gap-[100px]">
       <Header handleSearch={handleSearch}></Header>
 
       <MainContent latest={Latest}> </MainContent>
@@ -80,6 +82,8 @@ export default function Home() {
       <TrendingBlog trend={Trending}></TrendingBlog>
 
       <AllBlog blog={filteredArray}></AllBlog>
+
+      <Footer></Footer>
     </div>
   );
 }

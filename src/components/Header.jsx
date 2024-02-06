@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { Context } from "./layout/Context";
+import { useContext } from "react";
+import Link from "next/link";
 
-export const Header = ({ handleSearch }) => {
+export const Header = () => {
+  const { handleSearch } = useContext(Context);
+
   return (
     <div className="max-w-screen-xl m-auto">
       <div className="container flex  gap-[118px] py-8">
@@ -9,8 +14,13 @@ export const Header = ({ handleSearch }) => {
         </div>
         <div className="flex gap-[21px]">
           <ul className=" w-[667px] flex  text-base  gap-10 justify-center items-center">
-            <li>Home</li>
-            <li>Blog</li>
+            <Link href={"./"}>
+              <li> Home</li>
+            </Link>
+            <Link href={{ pathname: "/bloglist" }}>
+              <li>Blog</li>
+            </Link>
+
             <li>Contact</li>
           </ul>
 
@@ -20,7 +30,7 @@ export const Header = ({ handleSearch }) => {
               type="text"
               className="bg-gray-100 text-sm w-[114px]"
             />
-            
+
             <img className="size-4" src="/search-icon.svg" alt="" />
           </div>
         </div>

@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "./layout/Context";
 
-export const MainContent = ({ latest }) => {
+export const MainContent = () => {
+  const { Latest } = useContext(Context);
   return (
     <div className=" max-w-screen-xl m-auto flex flex-col items-center justify-center   ">
       <div className=" w-[1216px]  flex flex-row overflow-x-hidden ">
-        {latest.map((el) => {
+        {Latest.map((el) => {
           return (
             <div className="w-fit">
               <div className="relative">

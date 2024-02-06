@@ -1,12 +1,15 @@
 import { split } from "postcss/lib/list";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "./layout/Context";
 
 export const TrendingBlog = ({ trend }) => {
+  const { Trending } = useContext(Context);
+
   return (
     <div className=" max-w-screen-xl m-auto flex flex-col  gap-[30px]">
       <h2 className="font-bold text-4xl text-black px-5 py-4">Trending</h2>
       <div className=" w-full grid grid-cols-4 gap-5 ">
-        {trend.map((el) => {
+        {Trending.map((el) => {
           return (
             <div
               className="w-[293px] h-[320px] rounded-md relative"

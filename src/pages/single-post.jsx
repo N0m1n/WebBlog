@@ -31,7 +31,6 @@ const SinglePost = () => {
 
   return (
     <div className="bg-white flex flex-col gap-[100px]">
-      <Header></Header>
       <div className="max-w-screen-xl m-auto flex flex-col gap-5">
         <div>
           <div className="text-4xl text-black font-bold ">{queryId.title}</div>
@@ -56,8 +55,6 @@ const SinglePost = () => {
           <div url={queryId.url}></div>
         </div>
       </div>
-
-      <Footer></Footer>
     </div>
   );
 };

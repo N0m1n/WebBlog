@@ -7,8 +7,8 @@ export const Header = () => {
   const { handleSearch } = useContext(Context);
 
   return (
-    <div className="max-w-screen-xl m-auto">
-      <div className="container flex  gap-[118px] py-8">
+    <div className="w-full   px-8 bg-white sticky top-0">
+      <div className="max-w-screen-xl m-auto pb-[100px] flex justify-center gap-[118px] py-8">
         <div className="w-full">
           <img src="Logo.svg" alt="" />
         </div>
@@ -28,6 +28,7 @@ export const Header = () => {
             <input
               onChange={handleSearch}
               type="text"
+              placeholder="Search"
               className="bg-gray-100 text-sm w-[114px]"
             />
 

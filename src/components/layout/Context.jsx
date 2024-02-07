@@ -8,6 +8,7 @@ export const ArticleProvider = ({ children }) => {
   const [Latest, SetLatest] = useState([]);
   const [Trending, SetTrending] = useState([]);
   const [loader, Setloader] = useState(9);
+  const [filteredTags, SetFilteredTags] = useState([]);
 
   let pageStatus = "9";
 
@@ -26,7 +27,7 @@ export const ArticleProvider = ({ children }) => {
         `https://dev.to/api/articles?per_page=200&per_page=${loader}`
       );
       const latest = await fetch(
-        `https://dev.to/api/articles?state=fresh&per_page=3`
+        `https://dev.to/api/articles?state=fresh&per_page=4`
       );
       const rising = await fetch(
         `https://dev.to/api/articles?state=rising&per_page=4`
@@ -42,6 +43,7 @@ export const ArticleProvider = ({ children }) => {
       SetTrending(risingData);
 
       setFilteredArray(articlesData);
+      setFilteredArray;
     } catch (error) {
       console.log(error);
     }
@@ -49,6 +51,10 @@ export const ArticleProvider = ({ children }) => {
 
   const LoadMore = () => {
     Setloader(loader + 3);
+  };
+
+  const ViewAll = () => {
+    Setloader(loader + 191);
   };
 
   useEffect(() => {
@@ -62,6 +68,15 @@ export const ArticleProvider = ({ children }) => {
     setFilteredArray(filteredArticles);
   };
 
+  const FilteredTag = (ev) => {
+    const filteredArticles = articles.filter((article) =>
+      article.tags.toUpperCase().split(", ")[1].includes(ev.target.value)
+    );
+    setFilteredArray(filteredArticles);
+  };
+
+  console.log(FilteredTag);
+
   return (
     <Context.Provider
       value={{
@@ -71,6 +86,8 @@ export const ArticleProvider = ({ children }) => {
         filteredArray,
         handleSearch,
         LoadMore,
+        ViewAll,
+        FilteredTag,
       }}
     >
       {children}

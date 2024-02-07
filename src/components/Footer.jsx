@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <div className="max-w-screen-xl m-auto  flex flex-col gap-5 justify-center">
-      <div className="flex flex-row place-content-between  ">
+    <div className="w-full m-auto  bg-white bottom-0 relative flex flex-col gap-5 pt-[100px] justify-center">
+      <div className="max-w-screen-xl m-auto flex flex-row place-content-between  ">
         <div className="w-[25%] flex flex-col gap-3">
           <div className="w-auto flex flex-col gap-3 ">
             <h2 className="text-black text-lg font-bold">About</h2>
@@ -21,7 +21,7 @@ export const Footer = () => {
           <li>Blog</li>
           <li>Contact</li>
         </ul>
-        <div className=" flex flex-row gap-4 *:size-4">
+        <div className="flex flex-row gap-4 *:size-4">
           <img src="facebook.svg" alt="" />
           <img src="instagram.svg" alt="" />
           <img src="twitter.svg" alt="" />

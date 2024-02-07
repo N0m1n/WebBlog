@@ -3,12 +3,25 @@ import { Context } from "./layout/Context";
 
 export const MainContent = () => {
   const { Latest } = useContext(Context);
+
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => {
+    setCurrent((current) => (current === 0 ? Latest.length - 1 : current - 1));
+  };
+
+  const next = () => {
+    setCurrent((current) => (current === Latest.length - 1 ? 0 : current + 1));
+  };
   return (
     <div className=" max-w-screen-xl m-auto flex flex-col items-center justify-center   ">
       <div className=" w-[1216px]  flex flex-row overflow-x-hidden ">
         {Latest.map((el) => {
           return (
-            <div className="w-fit">
+            <div
+              className="w-fit transition-transform ease-out duration-500"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
               <div className="relative">
                 <img
                   className="max-w-[1216px] h-[651px]"
@@ -32,9 +45,20 @@ export const MainContent = () => {
         })}
       </div>
 
-      <div className="flex flex-row place-content-end gap-1 *:p-3 *:border *:size-10  *: *:rounded-md *:border-gray-800">
-        <img className="" src="/arrow-left.svg" alt="" />
-        <img className=" " src="/arrow-right.svg" alt="" />
+      <div className="flex flex-row  justify-end  gap-1 *:p-3 *:border *:size-10  *: *:rounded-md *:border-gray-800">
+        <img
+          onClick={prev}
+          className="cursor-pointer"
+          src="/arrow-left.svg"
+          alt=""
+        />
+        <img
+          on
+          onClick={next}
+          className="cursor-pointer "
+          src="/arrow-right.svg"
+          alt=""
+        />
       </div>
     </div>
   );

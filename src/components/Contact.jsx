@@ -1,7 +1,5 @@
-export const ContactData = () => {
-  return (
-    <div>
+import { Footer, Header } from "./Footer";
 
-    </div>
-  );
+export const ContactData = () => {
+  return <div></div>;
 };

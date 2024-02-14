@@ -20,8 +20,9 @@ export const Header = () => {
             <Link href={{ pathname: "/bloglist" }}>
               <li>Blog</li>
             </Link>
-
-            <li>Contact</li>
+            <Link href={{ pathname: "/contact" }}>
+              <li>Contact</li>
+            </Link>
           </ul>
 
           <div className=" flex flex-row bg-gray-100 gap-3 border-gray-100 rounded-[5px] py-2  pl-4 pr-2">

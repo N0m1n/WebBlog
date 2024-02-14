@@ -3,4 +3,4 @@ export * from "./Main-Blog";
 export * from "./Trending";
 export * from "./All-Blog";
 export * from "./Footer";
-export * from "./Contact";
+export * from "../pages/contact";

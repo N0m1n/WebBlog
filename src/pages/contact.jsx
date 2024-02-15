@@ -2,8 +2,8 @@ import { Footer, Header } from "../components/Index";
 
 export default function ContactData() {
   return (
-    <div className=" bg-white ">
-      <div className="max-w-screen-xl m-auto flex flex-col gap-5 size-[895px]">
+    <div className=" bg-white pb-[100px]">
+      <div className="max-w-screen-xl m-auto flex flex-col gap-5 w-[895px]  h-[895px]">
         <div className="flex flex-col mx-14 pb-3.5 px-2.5 gap-5 justify-center">
           <div className="flex flex-col gap-5">
             <h1 className="justify-start text-4xl font-bold">Contact Us</h1>
@@ -31,32 +31,34 @@ export default function ContactData() {
           </div>
         </div>
         <div>
-          <div className="flex flex-col  w-[] mx-14 bg-gray-100 rounded-xl ">
-            <div className="flex flex-col gap-6 relative top-[29px] left-[35px]">
+          <div className="flex flex-col h-full m-12 bg-gray-100 rounded-xl ">
+            <div className="flex flex-col gap-6  pt-[29px] pl-[35px]">
               <h1 className="text-lg font-bold">Leave a Message</h1>
-              <div className="grid grid-cols-2 gap-5 *:rounded-md">
+              <div className="grid grid-cols-3 gap-y-5 *:rounded-md">
                 <input
-                  className="w-[225px] h-[38px]"
+                  className=" w-fit p-2"
                   type="text"
                   placeholder="Your Name"
                 />
                 <input
-                  className="w-[225px] h-[38px]"
+                  className=" w-fit p-2"
                   type="text"
                   placeholder="Your Email"
                 />
                 <input
-                  className="col-span-2 w-[478px] h-[38px]"
+                  className="col-span-2 w-[478px] h-[38px] p-2"
                   type="text"
                   placeholder="Subject"
                 />
                 <input
-                  className="col-span-2 w-[478px] h-[134px]"
+                  className="col-span-2 w-[478px] h-[134px] p-2"
                   type="text"
                   placeholder="Write a message"
                 />
               </div>
-              <button className="rounded-md bg-blue-300">Send message</button>
+              <button className="rounded-md text-white bg-blue-500 px-4 py-2.5 max-w-fit ">
+                Send message
+              </button>
             </div>
           </div>
         </div>

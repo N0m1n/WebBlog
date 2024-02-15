@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className=" bg-white  relative bottom-0 flex flex-col gap-5 pt-[100px] ">
+    <div className=" bg-gray-100 relative bottom-0 flex flex-col gap-5 pt-[25px]  ">
       <di className="max-w-screen-xl m-auto ">
         <div className="max-w-screen-xl m-auto flex flex-row place-content-between  ">
           <div className="w-[25%] flex flex-col gap-3">

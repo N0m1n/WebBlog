@@ -15,7 +15,7 @@ export const MainContent = () => {
   };
   return (
     <div className=" max-w-screen-xl m-auto flex flex-col items-center justify-center   ">
-      <div className=" w-[1216px]  flex flex-row overflow-x-hidden ">
+      <div className=" max-w-[1216px] flex flex-row overflow-x-hidden ">
         {Latest.map((el) => {
           return (
             <div
@@ -45,7 +45,7 @@ export const MainContent = () => {
         })}
       </div>
 
-      <div className="flex flex-row  justify-end  gap-1 *:p-3 *:border *:size-10  *: *:rounded-md *:border-gray-800">
+      <div className=" w-full flex flex-row justify-end gap-1 *:p-3 *:border *:size-10  *: *:rounded-md *:border-gray-800">
         <img
           onClick={prev}
           className="cursor-pointer"

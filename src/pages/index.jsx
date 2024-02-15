@@ -1,85 +1,43 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { Context } from "../components/layout/Context";
+import { useContext, useEffect, useState } from "react";
 import {
   Header,
   MainContent,
   TrendingBlog,
   AllBlog,
+  Footer,
 } from "../components/Index.js";
-
-import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// import { Header } from "../components/Index";
-
-const statusArray = [
-  {
-    latestStatus: "latest",
-    pages: {
-      per_pages: "9",
-    },
-    trending: "state=rising",
-  },
-];
-
 export default function Home() {
-  const [articles, setArticles] = useState([]);
-  const [filteredArray, setFilteredArray] = useState(articles);
-  const [Latest, SetLatest] = useState([]);
-  const [Trending, SetTrending] = useState([]);
-  const [loader, Setloader] = useState(9);
+  const { ViewAll, FilteredTag } = useContext(Context);
 
-  let pageStatus = "9";
-
-  const fetchData = async () => {
-    try {
-      const articles = await fetch(
-        `https://dev.to/api/articles?per_page=${pageStatus}`
-      );
-      const latest = await fetch(
-        `https://dev.to/api/articles?state=fresh&per_page=1`
-      );
-      const rising = await fetch(
-        `https://dev.to/api/articles?state=rising&per_page=4`
-      );
-
-      const articlesData = await articles.json();
-      const latestData = await latest.json();
-
-      const risingData = await rising.json();
-
-      setArticles(articlesData);
-      SetLatest(latestData);
-      SetTrending(risingData);
-
-      setFilteredArray(articlesData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  console.log(fetchData);
-
-  const handleSearch = (event) => {
-    const filteredArticles = articles.filter((article) =>
-      article.title.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setFilteredArray(filteredArticles);
-  };
   return (
-    <div>
-      <Header handleSearch={handleSearch}></Header>
+    <div className="bg-white flex flex-col gap-[100px]">
+      <MainContent> </MainContent>
 
-      <MainContent latest={Latest}> </MainContent>
+      <TrendingBlog></TrendingBlog>
+      <div>
+        <div className="max-w-screen-xl m-auto flex flex-col gap-20 ">
+          <div className="text-4xl text-black font-bold ">All Blog Post</div>
+          <div className="flex flex-row place-content-between ">
+            <ul className="flex flex-row gap-4 ">
+              <li>All</li>
+              <li onClick={FilteredTag}>CSS</li>
+              <li>Travel</li>
+              <li>Fashion</li>
+              <li>Technology</li>
+              <li>Branding</li>
+            </ul>
+            <button onClick={ViewAll}>View All</button>
+          </div>
+        </div>
+      </div>
 
-      <TrendingBlog trend={Trending}></TrendingBlog>
-
-      <AllBlog blog={filteredArray}></AllBlog>
+      <AllBlog></AllBlog>
     </div>
   );
 }

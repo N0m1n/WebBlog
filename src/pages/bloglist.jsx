@@ -4,7 +4,7 @@ export default function BlogList() {
   return (
     <div className="bg-white flex flex-col gap-[100px]">
       <div className="max-w-screen-xl m-auto flex flex-col gap-20 ">
-        <div className="text-4xl text-black font-bold ">All Blog Post</div>
+        <div className="text-4xl text-black font-bold mb-[100px] ">All Blog Post</div>
         <AllBlog></AllBlog>
       </div>
     </div>

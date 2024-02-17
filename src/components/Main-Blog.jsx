@@ -14,7 +14,7 @@ export const MainContent = () => {
     setCurrent((current) => (current === Latest.length - 1 ? 0 : current + 1));
   };
   return (
-    <div className=" max-w-screen-xl m-auto flex flex-col items-center justify-center   ">
+    <div className=" sm:max-w-screen-xl sm:m-auto sm:flex sm:flex-col sm:items-center sm:justify-center sm:visible hidden  ">
       <div className=" max-w-[1216px] flex flex-row overflow-x-hidden ">
         {Latest.map((el) => {
           return (
@@ -28,7 +28,7 @@ export const MainContent = () => {
                   src={el.social_image || "latest-blog.png"}
                   alt=""
                 />
-                <div className="w-[598px] absolute bottom-[10px] rigth-[10px] z-10 flex flex-col gap-4 bg-white border rounded-xl p-10">
+                <div className="max-w-[598px] absolute bottom-[10px] rigth-[10px] z-10 flex flex-col gap-4 bg-white border rounded-xl p-10">
                   <span className="px-[10px] py-1 rounded-md text-sm w-fit bg-indigo-500 text-white">
                     Technology
                   </span>

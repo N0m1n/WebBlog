@@ -1,28 +1,28 @@
 export const Footer = () => {
   return (
-    <div className=" bg-gray-100 relative bottom-0 flex flex-col gap-5 pt-[25px]  ">
-      <di className="max-w-screen-xl m-auto ">
-        <div className="max-w-screen-xl m-auto flex flex-row place-content-between  ">
-          <div className="w-[25%] flex flex-col gap-3">
-            <div className="w-auto flex flex-col gap-3 ">
-              <h2 className="text-black text-lg font-bold">About</h2>
-              <p className="text-gray-600 text-base ">
+    <div className=" bg-gray-100 flex flex-col justify-center sm:gap-5 sm:pt-[25px] ">
+      <di className="sm:max-w-screen-xl sm:m-auto ">
+        <div className="sm:max-w-screen-xl sm:px-5 flex flex-col sm:gap-5 sm:flex-row sm:place-content-between  ">
+          <div className="sm:w-[25%] sm:flex sm:flex-col sm:gap-3 sm:visible hidden">
+            <div className="sm:w-auto sm:flex sm:flex-col sm:gap-3  ">
+              <h2 className="sm:text-black sm:text-lg sm:font-bold">About</h2>
+              <p className="sm:text-gray-600 sm:text-base ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam
               </p>
             </div>
-            <div className="flex flex-col gap-1 *:text-gray-black *:text-base">
+            <div className="sm:flex sm:flex-col sm:gap-1 sm:*:text-gray-black sm:*:text-base">
               <p>Email : info@jstemplate.net</p>
               <p>Phone : 880 123 456 789</p>
             </div>
           </div>
-          <ul className="flex flex-col justify-start gap-2 *:text-base">
+          <ul className="flex flex-col sm:justify-start pt-5 gap-2 *:text-base">
             <li>Home</li>
             <li>Blog</li>
             <li>Contact</li>
           </ul>
-          <div className="flex flex-row gap-4 *:size-4">
+          <div className="flex flex-row gap-4 pt-4 *:size-4">
             <img src="facebook.svg" alt="" />
             <img src="instagram.svg" alt="" />
             <img src="twitter.svg" alt="" />
@@ -30,11 +30,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t flex flex-row  justify-between py-8">
+        <div className="sm:border-t sm:flex sm:flex-row  sm:justify-between  sm:px-5 py-8">
           <div>
-            <img src="/Logo.svg" alt="" />
+            <img src="/Copyright.svg" alt="" />
           </div>
-          <ul className="flex flex-row gap-16 ">
+          <ul className="sm:flex sm:flex-row sm:gap-16 sm:visible invisible ">
             <li>Terms of Use</li>
             <li>Privacy Policy</li>
             <li>Cookie Plicy</li>

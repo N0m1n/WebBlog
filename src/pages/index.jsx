@@ -16,14 +16,15 @@ export default function Home() {
   const { ViewAll, FilteredTag } = useContext(Context);
 
   return (
-    <div className="bg-white flex flex-col gap-[100px]">
+    <div className="bg-white flex flex-col sm:gap-[100px]">
+
       <MainContent> </MainContent>
 
       <TrendingBlog></TrendingBlog>
       <div>
-        <div className="max-w-screen-xl m-auto flex flex-col gap-20 ">
-          <div className="text-4xl text-black font-bold ">All Blog Post</div>
-          <div className="flex flex-row place-content-between ">
+        <div className="sm:max-w-screen-xl sm:m-auto sm:flex sm:flex-col gap-20">
+          <div className="sm:text-4xl text-3xl text-black sm:font-bold  p-8 font-semi-bold">All Blog Post</div>
+          <div className="sm:flex sm:flex-row sm:place-content-between sm:visible hidden ">
             <ul className="flex flex-row gap-4 ">
               <li>All</li>
               <li onClick={FilteredTag}>CSS</li>

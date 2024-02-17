@@ -9,8 +9,8 @@ export const AllBlog = () => {
   const { filteredArray, LoadMore } = useContext(Context);
 
   return (
-    <div className="max-w-screen-xl m-auto flex flex-col gap-20 ">
-      <div className="w-full grid grid-cols-3  gap-[30px] items-center justify-center  ">
+    <div className="sm:max-w-screen-xl sm:m-auto flex flex-col sm:gap-20 sm:mb-[100px]">
+      <div className="sm:w-full sm:grid sm:grid-cols-3 flex flex-col gap-5 sm:gap-[30px] items-center justify-center  ">
         {filteredArray.map((el) => {
           return (
             <div>
@@ -30,7 +30,7 @@ export const AllBlog = () => {
           );
         })}
       </div>
-      <div className="flex justify-center ">
+      <div className="sm:flex sm:justify-center sm:visible invisible ">
         <button onClick={LoadMore} className="border rounded-md py-3 px-5">
           Load More
         </button>

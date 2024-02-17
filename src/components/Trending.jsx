@@ -7,10 +7,10 @@ export const TrendingBlog = ({ trend }) => {
   const { Trending } = useContext(Context);
 
   return (
-    <div className=" max-w-screen-xl m-auto flex flex-col  gap-[30px]">
+    <div className=" sm: max-w-screen-xl sm: m-auto sm:flex sm:flex-col  sm:gap-[30px]">
       <h2 className="font-bold text-4xl text-black px-5 py-4">Trending</h2>
 
-      <div className=" w-full grid grid-cols-4 gap-5 ">
+      <div className="sm:w-full sm:grid sm:grid-cols-4 flex flex-col h-[50%] overflow-y-hidden gap-5 ">
         {Trending.map((el) => {
           return (
             <div>

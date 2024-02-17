@@ -7,13 +7,15 @@ export const Header = () => {
   const { handleSearch } = useContext(Context);
 
   return (
-    <div className="w-full   px-8 bg-white sticky top-0">
-      <div className="max-w-screen-xl m-auto pb-[100px] flex justify-center gap-[118px] py-8">
-        <div className="w-full">
+    <div className="sm:w-full  sm:px-8 bg-white sm:sticky  sm:top-0">
+      <div className="sm:max-w-screen-xl sm:m-auto sm:pb-[100px] sm:flex sm:justify-center sm:gap-[118px] sm:py-8">
+        <div className="w-full flex flex-row p-5 justify-between">
           <img src="Logo.svg" alt="" />
+          <img className="sm:invisible visible" src="menu.svg" alt="" />
         </div>
-        <div className="flex gap-[21px]">
-          <ul className=" w-[667px] flex  text-base  gap-10 justify-center items-center">
+        <div className="sm:flex sm:gap-[21px] sm:visible invisible"> 
+
+          <ul className=" sm:w-[667px] flex  text-base  gap-10 justify-center ">
             <Link href={"./"}>
               <li> Home</li>
             </Link>

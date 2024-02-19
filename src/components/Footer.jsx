@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const Footer = () => {
   return (
     <div className=" bg-gray-100 flex flex-col justify-center sm:gap-5 sm:pt-[25px] ">
@@ -18,9 +19,17 @@ export const Footer = () => {
             </div>
           </div>
           <ul className="flex flex-col sm:justify-start pt-5 gap-2 *:text-base">
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <Link href={"./"}>
+              {" "}
+              <li>Home</li>
+            </Link>
+            <Link href={"/bloglist"}>
+              <li>Blog</li>
+            </Link>
+            <Link href={"/contact"}>
+              {" "}
+              <li>Contact</li>
+            </Link>
           </ul>
           <div className="flex flex-row gap-4 pt-4 *:size-4">
             <img src="facebook.svg" alt="" />

@@ -18,7 +18,9 @@ export const TrendingBlog = ({ trend }) => {
                 <div
                   className="w-[293px] h-[320px] rounded-md relative"
                   style={{
-                    backgroundImage: `url(${el.cover_image})`,
+                    backgroundImage: `url(${
+                      el?.cover_image || "./latest-blog.png"
+                    })`,
                   }}
                 >
                   <div className=" w-full h-full bg-black bg-opacity-30 rounded-md  ">

@@ -32,14 +32,14 @@ const SinglePost = () => {
   return (
     <div className="bg-white flex flex-col gap-[100px] ">
       <div className="max-w-screen-xl m-auto flex flex-col gap-5 mb-[100px]">
-        <div>
+        <div className="flex flex-col gap-5">
           <div className="text-4xl text-black font-bold ">{queryId.title}</div>
 
           <div className="flex flex-row gap-6">
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-10">
               <img
                 className="size-6 border border-gray-950 rounded-full"
-                src="/user-regular.svg"
+                src={queryId.user?.profile_image || "/user-regular.svg"}
                 alt=""
               />
               <div className=" text-base text-gray-950">
@@ -47,12 +47,14 @@ const SinglePost = () => {
               </div>
             </div>
 
-            <div className=" text-base text-gray-950">Date</div>
+            <div className=" text-base text-gray-950">
+              {queryId.readable_publish_date}
+            </div>
           </div>
           <div>
             <img src={queryId.social_image} alt="" />
           </div>
-          <div url={queryId.url}></div>
+          <p>{queryId.description}</p>
         </div>
       </div>
     </div>

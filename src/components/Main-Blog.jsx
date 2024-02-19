@@ -15,17 +15,17 @@ export const MainContent = () => {
   };
   return (
     <div className=" sm:max-w-screen-xl sm:m-auto sm:flex sm:flex-col sm:items-center sm:justify-center sm:visible hidden  ">
-      <div className=" max-w-[1216px] flex flex-row overflow-x-hidden ">
+      <div className=" max-w-[1216px] flex flex-row  rounded-md gap-2 overflow-x-scroll ">
         {Latest.map((el) => {
           return (
             <div
-              className="w-fit transition-transform ease-out duration-500"
+              className="w-fit  transition-transform ease-out duration-500"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               <div className="relative">
                 <img
-                  className="max-w-[1216px] h-[651px]"
-                  src={el.social_image || "latest-blog.png"}
+                  className="max-w-[1216px] h-[651px]  rounded-md "
+                  src={el?.cover_image || "./latest-blog.png"}
                   alt=""
                 />
                 <div className="max-w-[598px] absolute bottom-[10px] rigth-[10px] z-10 flex flex-col gap-4 bg-white border rounded-xl p-10">

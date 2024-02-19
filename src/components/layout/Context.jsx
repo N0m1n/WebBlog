@@ -7,10 +7,10 @@ export const ArticleProvider = ({ children }) => {
   const [filteredArray, setFilteredArray] = useState(articles);
   const [Latest, SetLatest] = useState([]);
   const [Trending, SetTrending] = useState([]);
+  const [search, SetSearch] = useState([]);
   const [loader, Setloader] = useState(9);
   const [filteredTags, SetFilteredTags] = useState([]);
-
-  let pageStatus = "9";
+  const [isLoading, SetisLoading] = useState([]);
 
   //   useEffect(() => {
   //     fetch(`https://dev.to/api/articles?per_page=${pageStatus}`)
@@ -32,15 +32,22 @@ export const ArticleProvider = ({ children }) => {
       const rising = await fetch(
         `https://dev.to/api/articles?state=rising&per_page=4`
       );
+      const search = await fetch(
+        `https://dev.to/api/articles?per_page=${loader}`
+      );
 
       const articlesData = await articles.json();
       const latestData = await latest.json();
 
       const risingData = await rising.json();
 
+      const searchData = await search.json();
+
       setArticles(articlesData);
       SetLatest(latestData);
       SetTrending(risingData);
+
+      SetSearch(searchData);
 
       setFilteredArray(articlesData);
       setFilteredArray;
@@ -68,14 +75,12 @@ export const ArticleProvider = ({ children }) => {
     setFilteredArray(filteredArticles);
   };
 
-  const FilteredTag = (ev) => {
-    const filteredArticles = articles.filter((article) =>
-      article.tags.toUpperCase().split(", ")[1].includes(ev.target.value)
-    );
-    setFilteredArray(filteredArticles);
-  };
-
-  console.log(FilteredTag);
+  // const FilteredTag = (ev) => {
+  //   const filteredArticles = articles.filter((article) =>
+  //     article.tags.toUpperCase().split(", ")[1].includes(ev.target.value)
+  //   );
+  //   setFilteredArray(filteredArticles);
+  // };
 
   return (
     <Context.Provider
@@ -87,7 +92,6 @@ export const ArticleProvider = ({ children }) => {
         handleSearch,
         LoadMore,
         ViewAll,
-        FilteredTag,
       }}
     >
       {children}

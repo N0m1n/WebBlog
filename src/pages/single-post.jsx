@@ -54,7 +54,10 @@ const SinglePost = () => {
           <div>
             <img src={queryId.social_image} alt="" />
           </div>
-          <p>{queryId.description}</p>
+          <p
+            className="text-balance"
+            dangerouslySetInnerHTML={{ __html: queryId.body_html }}
+          ></p>
         </div>
       </div>
     </div>

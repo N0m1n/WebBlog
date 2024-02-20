@@ -6,7 +6,7 @@ import { Context } from "./layout/Context";
 import SinglePost from "@/pages/single-post";
 
 export const AllBlog = () => {
-  const { filteredArray, LoadMore } = useContext(Context);
+  const { filteredArray, setFilteredArray, LoadMore } = useContext(Context);
 
   return (
     <div className="sm:max-w-screen-xl sm:m-auto flex flex-col sm:gap-20 sm:mb-[100px]">
